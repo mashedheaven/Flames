@@ -1,5 +1,7 @@
 # FLAMES Animated Web Game 🔥💖
 
+**Play the game here:** [https://mashedheaven.github.io/Flames/](https://mashedheaven.github.io/Flames/)
+
 FLAMES is a popular childhood game, especially common in India, used to playfully predict the relationship dynamic between two people based on their names. 
 
 This project transforms the classic pen-and-paper game into a highly animated, aesthetic web experience!
