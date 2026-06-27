@@ -32,6 +32,7 @@ calculateBtn.addEventListener('click', async () => {
     name1Input.disabled = true;
     name2Input.disabled = true;
     calculateBtn.classList.add('hidden'); // Hide the button during calculation
+    document.getElementById('game-description').classList.add('hidden');
 
     // Reset Stage
     name1Display.innerHTML = '';
@@ -174,6 +175,7 @@ closeDialogBtn.addEventListener('click', () => {
     name1Input.disabled = false;
     name2Input.disabled = false;
     calculateBtn.classList.remove('hidden'); // Show button again
+    document.getElementById('game-description').classList.remove('hidden');
     animationStage.classList.add('hidden');
     name1Input.value = '';
     name2Input.value = '';
