@@ -57,6 +57,23 @@ calculateBtn.addEventListener('click', async () => {
     const arr1 = name1.split('');
     const arr2 = name2.split('');
     
+    // Dynamically adjust font size to prevent long names from overflowing
+    const maxLength = Math.max(arr1.length, arr2.length);
+    let fontSize = 1.8; // Default font size in rem
+    let gapSize = 5; // Default gap in px
+    
+    if (maxLength > 8) {
+        // Decrease font size as length increases (minimum 0.6rem)
+        fontSize = Math.max(0.6, 1.8 - (maxLength - 8) * 0.12);
+        // Reduce letter gap for very long names
+        gapSize = Math.max(1, 5 - (maxLength - 8) * 0.5);
+    }
+    
+    const namesStage = document.querySelector('.names-stage');
+    namesStage.style.fontSize = `${fontSize}rem`;
+    name1Display.style.gap = `${gapSize}px`;
+    name2Display.style.gap = `${gapSize}px`;
+
     arr1.forEach((char, i) => {
         const span = document.createElement('span');
         span.className = 'letter';
