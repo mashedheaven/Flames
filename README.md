@@ -1,4 +1,4 @@
-# FLAMES Animated Web Game 🔥💖
+# FLAMES Animated Web Game 💖
 
 **Play the game here:** [Flames](https://mashedheaven.github.io/Flames/)
 
@@ -20,10 +20,6 @@ This project transforms the classic pen-and-paper game into a highly animated, a
    - **S** - Siblings
 5. **The Final Result**: The game counts to *N* across the letters of FLAMES, striking out the *N*-th letter each time until only one letter remains. That final letter is your predicted relationship!
 
-## Features
-- 🎨 **Glassmorphism UI**: Beautiful frosted glass design with dynamic gradient backgrounds.
-- ✨ **Immersive Animations**: Letter-by-letter strike-outs and a thrilling roulette countdown.
-- 🎆 **Contextual Confetti**: A stunning, customized particle explosion based on the final result (e.g., erupting volcano for Enemies, gentle snowfall of hearts for Lovers).
-
-## Running the Project
-Simply open `index.html` in any modern web browser or serve it via a local development server!
+## To launch the game
+[Flames](https://mashedheaven.github.io/Flames/)
+Alternaitvely, download the repo folder and simply open `index.html` in any modern web browser or serve it via a local development server!
