@@ -17,14 +17,28 @@
         <p class="subtitle">Discover your relationship</p>
         
         <div class="input-section">
-            <input type="text" id="name1" placeholder="Enter first name" autocomplete="off" spellcheck="false">
-            <input type="text" id="name2" placeholder="Enter second name" autocomplete="off" spellcheck="false">
+            <input type="text" id="name1" placeholder="Name" autocomplete="off" spellcheck="false">
+            <input type="text" id="name2" placeholder="Potential Partner's Name" autocomplete="off" spellcheck="false">
             <button id="calculate-btn">Calculate</button>
         </div>
 
-        <div id="game-description" class="info-card">
-            <h3>✨ How it works</h3>
-            <p><strong>FLAMES</strong> playfully predicts the relationship between two people! We cross out the common letters in your names, count the remaining letters, and use that number to cycle through the outcomes: <strong>F</strong>riends, <strong>L</strong>overs, <strong>A</strong>ffection, <strong>M</strong>arriage, <strong>E</strong>nemies, or <strong>S</strong>iblings!</p>
+        <div id="game-description" class="info-card collapsible">
+            <div class="summary" id="info-summary">
+                <h3>How it works</h3>
+            </div>
+            <div class="info-content-wrapper">
+                <div class="info-content">
+                    <p>FLAMES playfully predicts the relationship between two people! Put the name of a person you'd like (preferably yours) and your potential partner's name. We'll cross out the common letters in your names, count the remaining letters, and use that number to cycle through the outcomes:</p>
+                    <ul class="flames-list">
+                        <li class="flames-f"><span>F</span>riends</li>
+                        <li class="flames-l"><span>L</span>overs</li>
+                        <li class="flames-a"><span>A</span>ffection</li>
+                        <li class="flames-m"><span>M</span>arriage</li>
+                        <li class="flames-e"><span>E</span>nemies</li>
+                        <li class="flames-s"><span>S</span>iblings</li>
+                    </ul>
+                </div>
+            </div>
         </div>
 
         <div id="animation-stage" class="hidden">

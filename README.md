@@ -6,7 +6,7 @@ This project transforms the classic pen-and-paper game into a highly animated, a
 
 ## How to Play
 
-1. **Enter the Names**: Type two names into the input fields.
+1. **Enter the Names**: Put the name of a person you'd like (preferably yours) and your potential partner's name into the input fields.
 2. **Eliminate Common Letters**: The algorithm crosses out any letters that are shared between the two names.
 3. **Count the Rest**: It counts the total number of remaining letters across both names. Let's call this number *N*.
 4. **The FLAMES Roulette**: The word **F L A M E S** represents six relationship outcomes:

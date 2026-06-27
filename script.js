@@ -9,6 +9,15 @@ const resultDialog = document.getElementById('result-dialog');
 const resultTitle = document.getElementById('result-title');
 const resultMessage = document.getElementById('result-message');
 const closeDialogBtn = document.getElementById('close-dialog-btn');
+const infoSummary = document.getElementById('info-summary');
+const gameDescription = document.getElementById('game-description');
+
+// Toggle 'How it works' section
+if (infoSummary && gameDescription) {
+    infoSummary.addEventListener('click', () => {
+        gameDescription.classList.toggle('open');
+    });
+}
 
 const FLAMES_MEANINGS = {
     'F': { title: 'Friends', color: '#3b82f6', message: 'You are meant to be good friends!' },
