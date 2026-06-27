@@ -1,0 +1,272 @@
+:root {
+    --bg-color: #0f172a;
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --accent-color: #ec4899;
+    --accent-hover: #db2777;
+    --glass-bg: rgba(30, 41, 59, 0.7);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --glow-shadow: 0 0 15px rgba(236, 72, 153, 0.5);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    background: linear-gradient(135deg, #9a3412, #0f172a, #1e3a8a);
+    color: var(--text-primary);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* For full screen particle effects */
+}
+
+/* Glassmorphism Container */
+.glass-container {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    padding: 3rem;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    text-align: center;
+    position: relative;
+    z-index: 10;
+}
+
+h1 {
+    font-weight: 800;
+    font-size: 3rem;
+    background: linear-gradient(to right, #ec4899, #8b5cf6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0.5rem;
+    letter-spacing: 2px;
+}
+
+.subtitle {
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    font-weight: 300;
+}
+
+/* Inputs */
+.input-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+input {
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    padding: 1rem;
+    color: white;
+    font-family: inherit;
+    font-size: 1.1rem;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(236, 72, 153, 0.2);
+}
+
+button {
+    background: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 1rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    font-family: inherit;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    margin-top: 0.5rem;
+}
+
+button:hover {
+    background: var(--accent-hover);
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* Animations Stage */
+#animation-stage {
+    margin-top: 2rem;
+    min-height: 150px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.names-stage {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    font-size: 1.8rem;
+    font-weight: 600;
+    letter-spacing: 5px;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+}
+
+.name-display {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+/* Individual letter span */
+.letter {
+    display: inline-block;
+    position: relative;
+    transition: color 0.3s, opacity 0.3s;
+}
+
+/* Strike-out animation for common letters */
+.letter.strike {
+    color: var(--text-secondary);
+    opacity: 0.5;
+}
+
+.letter.strike::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background-color: #ef4444; /* Red strike line */
+    transition: width 0.4s ease-out;
+}
+
+.letter.strike.struck::after {
+    width: 100%;
+}
+
+/* FLAMES letters stage */
+.flames-stage {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-top: 2rem;
+}
+
+.flames-letter {
+    position: relative;
+    transition: color 0.2s, text-shadow 0.2s, transform 0.3s;
+}
+
+.flames-letter.glow {
+    color: #fff;
+    transform: scale(1.2);
+}
+
+.flames-letter.glow[data-letter="F"] { text-shadow: 0 0 10px #3b82f6, 0 0 20px #2563eb; } /* Blue for Friends */
+.flames-letter.glow[data-letter="L"] { text-shadow: 0 0 10px #ec4899, 0 0 20px #db2777; } /* Pink for Lovers */
+.flames-letter.glow[data-letter="A"] { text-shadow: 0 0 10px #f472b6, 0 0 20px #e11d48; } /* Soft Pink for Affection */
+.flames-letter.glow[data-letter="M"] { text-shadow: 0 0 10px #fcd34d, 0 0 20px #d97706; } /* Gold for Marriage */
+.flames-letter.glow[data-letter="E"] { text-shadow: 0 0 10px #ef4444, 0 0 20px #dc2626; } /* Red for Enemies */
+.flames-letter.glow[data-letter="S"] { text-shadow: 0 0 10px #10b981, 0 0 20px #059669; } /* Green for Siblings */
+
+.flames-letter.eliminated {
+    color: #475569;
+    opacity: 0.4;
+    transform: scale(0.9);
+}
+
+.flames-letter.eliminated::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -10%;
+    width: 120%;
+    height: 4px;
+    background-color: #ef4444;
+    transform: rotate(-10deg);
+}
+
+/* Final Result Dialog */
+dialog {
+    margin: auto;
+    background: var(--glass-bg);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid var(--accent-color);
+    border-radius: 24px;
+    color: white;
+    padding: 2.5rem;
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    
+    /* Modern Entry/Exit Animation Setup */
+    opacity: 0;
+    transform: scale(0.9) translateY(20px);
+    transition: display 0.4s allow-discrete, overlay 0.4s allow-discrete, opacity 0.4s ease-out, transform 0.4s ease-out;
+}
+
+dialog[open] {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+}
+
+/* Entry starting style */
+@starting-style {
+    dialog[open] {
+        opacity: 0;
+        transform: scale(0.9) translateY(20px);
+    }
+}
+
+dialog::backdrop {
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    transition: display 0.4s allow-discrete, overlay 0.4s allow-discrete, background-color 0.4s ease-out;
+    background-color: transparent;
+}
+
+dialog[open]::backdrop {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+@starting-style {
+    dialog[open]::backdrop {
+        background-color: transparent;
+    }
+}
+
+.dialog-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(to right, #fcd34d, #f59e0b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.dialog-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: #e2e8f0;
+}

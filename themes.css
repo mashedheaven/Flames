@@ -1,0 +1,25 @@
+
+/* Custom Themes for Result Dialog */
+dialog.enemies-theme {
+    border-color: #ef4444;
+    box-shadow: 0 0 50px rgba(239, 68, 68, 0.6);
+}
+dialog.enemies-theme[open]::backdrop {
+    background-color: rgba(153, 27, 27, 0.7);
+}
+
+dialog.lovers-theme {
+    border-color: #ec4899;
+    box-shadow: 0 0 50px rgba(236, 72, 153, 0.6);
+}
+dialog.lovers-theme[open]::backdrop {
+    background-color: rgba(157, 23, 77, 0.5);
+}
+
+dialog.marriage-theme {
+    border-color: #f59e0b;
+    box-shadow: 0 0 50px rgba(245, 158, 11, 0.6);
+}
+dialog.marriage-theme[open]::backdrop {
+    background-color: rgba(146, 64, 14, 0.5);
+}

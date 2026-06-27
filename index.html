@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FLAMES Game</title>
+    <!-- Modern typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="themes.css">
+</head>
+<body>
+    <div class="glass-container">
+        <h1>FLAMES</h1>
+        <p class="subtitle">Discover your relationship</p>
+        
+        <div class="input-section">
+            <input type="text" id="name1" placeholder="Enter first name" autocomplete="off" spellcheck="false">
+            <input type="text" id="name2" placeholder="Enter second name" autocomplete="off" spellcheck="false">
+            <button id="calculate-btn">Calculate</button>
+        </div>
+
+        <div id="animation-stage" class="hidden">
+            <div class="names-stage">
+                <div id="name1-display" class="name-display"></div>
+                <div id="name2-display" class="name-display"></div>
+            </div>
+            
+            <div class="flames-stage hidden" id="flames-display">
+                <span class="flames-letter" data-letter="F">F</span>
+                <span class="flames-letter" data-letter="L">L</span>
+                <span class="flames-letter" data-letter="A">A</span>
+                <span class="flames-letter" data-letter="M">M</span>
+                <span class="flames-letter" data-letter="E">E</span>
+                <span class="flames-letter" data-letter="S">S</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Result Dialog using modern dialog API -->
+    <dialog id="result-dialog">
+        <div class="dialog-content">
+            <h2 id="result-title">Result</h2>
+            <p id="result-message"></p>
+            <button id="close-dialog-btn">Play Again</button>
+        </div>
+    </dialog>
+
+    <!-- Canvas Confetti for particle effects -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
